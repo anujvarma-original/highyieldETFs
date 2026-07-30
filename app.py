@@ -261,7 +261,7 @@ with st.sidebar:
         help="Enter comma-, space-, or line-separated symbols.",
     )
 
-  history_period = st.selectbox(
+history_period = st.selectbox(
     "History",
     options=["1y", "2y", "5y", "10y", "max"],
     index=1,
