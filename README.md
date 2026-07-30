@@ -1,13 +1,11 @@
-# Covered-Call ETF Scanner
+# High-Income ETF Research Platform
 
-A Streamlit app that:
+## Files
 
-- scans a configurable list of covered-call and income ETFs;
-- estimates trailing-12-month distribution yield;
-- measures total return, volatility, maximum drawdown, and distribution growth;
-- ranks ETFs with adjustable weights;
-- builds a custom income basket;
-- starts with a 30% QQQI / 30% JEPQ / 20% SPYI / 20% JEPI basket.
+- `app.py` — Streamlit user interface
+- `analytics.py` — calculations, scoring, forecasting and portfolio search
+- `etf_catalog.py` — ETF lookup metadata
+- `requirements.txt` — Python dependencies
 
 ## Run locally
 
@@ -16,12 +14,12 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-## Deploy on Streamlit Community Cloud
+## Streamlit Cloud
 
-1. Put `app.py` and `requirements.txt` in a GitHub repository.
-2. In Streamlit Community Cloud, create a new app from that repository.
-3. Set the main file path to `app.py`.
-4. Deploy.
+Push all four source files to the same GitHub repository. Set `app.py` as the main file.
 
-Market data comes from Yahoo Finance through the unofficial `yfinance` package.
-The scanner is for research, not investment or tax advice.
+## Important limitations
+
+Yahoo Finance does not consistently supply the tax character of ETF distributions. The application therefore does not claim that a specific payment is or is not return of capital. Check the issuer's Section 19 notices and annual tax statements.
+
+The distribution forecast is a recency-weighted historical estimate, not a prediction based on current option-chain implied volatility.
