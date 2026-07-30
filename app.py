@@ -263,14 +263,14 @@ with st.sidebar:
 
 history_period=st.selectbox("History",options=["1y", "2y", "5y", "10y", "max"],index=1,)
 
-    minimum_yield = st.slider(
-        "Minimum trailing yield",
-        min_value=0.0,
-        max_value=30.0,
-        value=7.0,
-        step=0.5,
-        format="%.1f%%",
-    ) / 100
+minimum_yield = st.slider(
+"Minimum trailing yield",
+min_value=0.0,
+max_value=30.0,
+value=7.0,
+step=0.5,
+format="%.1f%%",
+) / 100
 
     maximum_drawdown = st.slider(
         "Maximum tolerated drawdown",
