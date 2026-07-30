@@ -261,11 +261,11 @@ with st.sidebar:
         help="Enter comma-, space-, or line-separated symbols.",
     )
 
-    history_period = st.selectbox(
-        "History",
-        options=["1y", "2y", "3y", "5y", "10y"],
-        index=2,
-    )
+  history_period = st.selectbox(
+    "History",
+    options=["1y", "2y", "5y", "10y", "max"],
+    index=1,
+)
 
     minimum_yield = st.slider(
         "Minimum trailing yield",
